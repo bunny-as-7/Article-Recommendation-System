@@ -1,0 +1,31 @@
+trainingInput:
+    hyperparameters:
+        goal: MAXIMIZE
+        maxTrials: 5
+        maxParallelTrials: 1
+        hyperparameterMetricTag: accuracy
+        params:
+            - parameterName: batch_size
+              type: INTEGER
+              minValue: 8
+              maxValue: 64
+              scaleType: UNIT_LINEAR_SCALE
+            - parameterName: learning_rate
+              type: DOUBLE
+              minValue: 0.01
+              maxValue: 0.1
+              scaleType: UNIT_LINEAR_SCALE
+            - parameterName: hidden_units
+              type: CATEGORICAL
+              categoricalValues: ["1024 512 256", "1024 512 128", "1024 256 128", "512 256 128", "1024 512 64", "1024 256 64", "512 256 64", "1024 128 64", "512 128 64", "256 128 64", "1024 512 32", "1024 256 32", "512 256 32", "1024 128 32", "512 128 32", "256 128 32", "1024 64 32", "512 64 32", "256 64 32", "128 64 32"]
+            - parameterName: content_id_embedding_dimensions
+              type: INTEGER
+              minValue: 5
+              maxValue: 250
+              scaleType: UNIT_LOG_SCALE
+            - parameterName: author_embedding_dimensions
+              type: INTEGER
+              minValue: 5
+              maxValue: 30
+              scaleType: UNIT_LINEAR_SCALE
+
